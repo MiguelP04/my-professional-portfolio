@@ -1,0 +1,126 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section
+  id="hero"
+  class="relative min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-16 overflow-hidden"
+>
+  <!-- Background grid -->
+  <div
+    class="absolute inset-0 opacity-[0.04]"
+    style="background-image: linear-gradient(var(--text) 1px, transparent 1px), linear-gradient(90deg, var(--text) 1px, transparent 1px); background-size: 60px 60px;"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Glow orb -->
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
+    style="background: radial-gradient(circle, #00e5a008 0%, transparent 70%); pointer-events: none;"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 w-full md:grid md:grid-cols-5 gap-12 items-center">
+    <div class="md:col-span-3 text-center md:text-left">
+
+      <!-- Eyebrow label -->
+      <p class="animate-fade-up mono text-[var(--accent)] text-sm tracking-[0.3em] uppercase mb-6">
+        &gt; Bienvenido a mi portafolio
+      </p>
+
+      <!-- Name -->
+      <h1
+        class="animate-fade-up delay-100 font-extrabold leading-[1.05] tracking-tight mb-4"
+        style="font-size: clamp(2.8rem, 8vw, 6rem);"
+      >
+        Miguel David
+        <br />
+        <span style="color: var(--accent); text-shadow: 0 0 40px #00e5a050;">
+          Petit Dávila
+        </span>
+      </h1>
+
+      <!-- Role -->
+      <div class="animate-fade-up delay-200 flex items-center justify-center md:justify-start gap-3 mb-6">
+        <span class="h-px w-8 bg-[var(--accent)] opacity-60 hidden md:block"></span>
+        <p class="mono text-[var(--text-muted)] text-base md:text-lg tracking-wide">
+          Ingeniero de Software <span class="text-[var(--accent)]">Full Stack</span>
+        </p>
+      </div>
+
+      <!-- Short bio -->
+      <p
+        class="animate-fade-up delay-300 text-[var(--text-muted)] text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0 mb-10"
+      >
+        Construyo aplicaciones web escalables y de alto rendimiento.
+        Especialista en el stack <span class="text-[var(--text)]">PERN</span> y arquitecturas
+        backend robustas con integración de <span class="text-[var(--text)]">IA</span>.
+      </p>
+
+      <!-- CTA buttons -->
+      <div class="animate-fade-up delay-400 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+        <a
+          href="#projects"
+          class="group inline-flex items-center gap-2 bg-[var(--accent)] text-[var(--bg)] font-bold px-7 py-3.5 rounded text-sm mono tracking-widest uppercase transition-all duration-300 hover:shadow-[0_0_24px_#00e5a060] hover:scale-105"
+        >
+          Ver Proyectos
+          <Icon name="lucide:arrow-right" width="14" height="14" class="group-hover:translate-x-1 transition-transform" />
+        </a>
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 border border-[var(--border)] text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] font-semibold px-7 py-3.5 rounded text-sm mono tracking-widest uppercase transition-all duration-300"
+        >
+          Contactar
+        </a>
+      </div>
+
+      <!-- Social links -->
+      <div class="animate-fade-up delay-500 flex items-center justify-center md:justify-start gap-6 mt-12">
+        <a
+          href="https://github.com/MiguelP04"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-[var(--text-dim)] hover:text-[var(--accent)] transition-colors duration-200"
+          aria-label="GitHub"
+        >
+          <Icon name="lucide:github" width="22" height="22" />
+        </a>
+        <a
+          href="mailto:miguel09112004@gmail.com"
+          class="text-[var(--text-dim)] hover:text-[var(--accent)] transition-colors duration-200"
+          aria-label="Email"
+        >
+          <Icon name="lucide:mail" width="22" height="22" />
+        </a>
+        <span class="mono text-[var(--text-dim)] text-xs tracking-widest">
+          Punto Fijo, Venezuela
+        </span>
+      </div>
+    </div>
+
+    <!-- Foto de perfil -->
+    <div class="md:col-span-2 flex items-center justify-center mt-12 md:mt-0">
+      <div class="relative w-80 h-80 rounded-2xl">
+        <!-- Glow detrás -->
+        <div class="absolute -inset-10 rounded-full pointer-events-none" style="background: radial-gradient(circle, #00e5a012 0%, transparent 70%);"></div>
+
+        <!-- Contenedor de la foto -->
+        <div class="relative w-full h-full overflow-hidden shadow-[0_0_80px_#00e5a015] rounded-2xl">
+          <img src="/MIGUEL.jpeg" alt="Miguel David Petit Dávila" class="w-full h-full object-cover" />
+
+          <!-- Grid igual al fondo del Hero -->
+          <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: linear-gradient(var(--text) 1px, transparent 1px), linear-gradient(90deg, var(--text) 1px, transparent 1px); background-size: 60px 60px;" aria-hidden="true"></div>
+
+          <!-- Vigneta para fundir bordes -->
+          <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at center, transparent 30%, var(--bg) 80%);"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+    <span class="mono text-[var(--text-dim)] text-[10px] tracking-widest uppercase">Scroll</span>
+    <div class="w-px h-10 bg-gradient-to-b from-[var(--accent)] to-transparent"></div>
+  </div>
+</section>

@@ -1,0 +1,160 @@
+---
+import { Icon } from "astro-icon/components";
+
+// ⚠️  SECCIÓN INTENCCIONALMENTE VACÍA
+// Reemplaza estos placeholders con tus proyectos reales.
+const projects = [
+  {
+    id: "01",
+    title: "Título del Proyecto Aquí",
+    description: "Descripción breve del proyecto en un par de líneas. Explica qué problema resuelve y cuál es el impacto principal.",
+    tech: ["Tecnología A", "Tecnología B", "Tecnología C"],
+    featured: true,
+  },
+  {
+    id: "02",
+    title: "Título del Proyecto Aquí",
+    description: "Descripción breve del proyecto en un par de líneas. Explica qué problema resuelve y cuál es el impacto principal.",
+    tech: ["Tecnología A", "Tecnología B"],
+    featured: false,
+  },
+  {
+    id: "03",
+    title: "Título del Proyecto Aquí",
+    description: "Descripción breve del proyecto en un par de líneas. Explica qué problema resuelve y cuál es el impacto principal.",
+    tech: ["Tecnología A", "Tecnología B", "Tecnología C", "Tecnología D"],
+    featured: false,
+  },
+  {
+    id: "04",
+    title: "Título del Proyecto Aquí",
+    description: "Descripción breve del proyecto en un par de líneas. Explica qué problema resuelve y cuál es el impacto principal.",
+    tech: ["Tecnología A", "Tecnología B"],
+    featured: false,
+  },
+  {
+    id: "05",
+    title: "Título del Proyecto Aquí",
+    description: "Descripción breve del proyecto en un par de líneas. Explica qué problema resuelve y cuál es el impacto principal.",
+    tech: ["Tecnología A", "Tecnología B", "Tecnología C"],
+    featured: false,
+  },
+  {
+    id: "06",
+    title: "Título del Proyecto Aquí",
+    description: "Descripción breve del proyecto en un par de líneas. Explica qué problema resuelve y cuál es el impacto principal.",
+    tech: ["Tecnología A", "Tecnología B"],
+    featured: false,
+  },
+];
+---
+
+<section id="projects" class="py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-6">
+      <span class="mono text-[var(--accent)] text-sm tracking-widest">03.</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Proyectos</h2>
+      <span class="flex-1 h-px bg-[var(--border)] max-w-xs hidden md:block"></span>
+    </div>
+
+    <!-- Placeholder notice -->
+    <p class="mono text-[var(--text-dim)] text-xs tracking-widest mb-14">
+      // Próximamente — Aquí irán tus proyectos reales
+    </p>
+
+    <!-- Project grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {projects.map((project) => (
+        <article
+          class={`
+            group relative flex flex-col border rounded-xl overflow-hidden
+            bg-[var(--surface)] transition-all duration-300
+            hover:border-[var(--accent)] hover:shadow-[0_0_24px_#00e5a015]
+            hover:-translate-y-1
+            ${project.featured
+              ? 'border-[var(--accent)]/40 sm:col-span-2 lg:col-span-1'
+              : 'border-[var(--border)]'
+            }
+          `}
+        >
+          <!-- Top bar accent -->
+          <div
+            class="h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Placeholder image area -->
+          <div
+            class="w-full h-44 bg-[var(--surface-2)] flex items-center justify-center border-b border-[var(--border)] relative overflow-hidden"
+          >
+            <!-- Animated placeholder grid -->
+            <div
+              class="absolute inset-0 opacity-[0.06]"
+              style="background-image: linear-gradient(var(--text) 1px, transparent 1px), linear-gradient(90deg, var(--text) 1px, transparent 1px); background-size: 24px 24px;"
+              aria-hidden="true"
+            ></div>
+            <span class="mono text-[var(--text-dim)] text-xs tracking-widest relative z-10">
+              [ Preview ]
+            </span>
+
+            <!-- Featured badge -->
+            {project.featured && (
+              <span
+                class="absolute top-3 right-3 mono text-[var(--accent)] border border-[var(--accent)]/50 bg-[var(--accent)]/10 text-[9px] px-2 py-1 rounded tracking-widest uppercase"
+              >
+                ★ Destacado
+              </span>
+            )}
+          </div>
+
+          <!-- Card content -->
+          <div class="flex flex-col flex-1 p-5 gap-4">
+            <!-- ID + title -->
+            <div>
+              <span class="mono text-[var(--text-dim)] text-[10px] tracking-widest">{project.id}.</span>
+              <h3 class="font-bold text-base mt-1 text-[var(--text)] group-hover:text-[var(--accent)] transition-colors duration-200">
+                {project.title}
+              </h3>
+            </div>
+
+            <!-- Description -->
+            <p class="text-[var(--text-muted)] text-sm leading-relaxed flex-1">
+              {project.description}
+            </p>
+
+            <!-- Tech stack -->
+            <div class="flex flex-wrap gap-1.5">
+              {project.tech.map((t) => (
+                <span class="mono text-[9px] px-2 py-0.5 rounded border border-[var(--border)] text-[var(--text-dim)] tracking-wider bg-[var(--surface-2)]">
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3 pt-1">
+              <button
+                disabled
+                class="inline-flex items-center gap-2 border border-[var(--border)] text-[var(--text-dim)] mono text-[10px] px-4 py-2 rounded tracking-widest uppercase cursor-not-allowed opacity-50"
+                title="Próximamente"
+              >
+                <Icon name="lucide:github" width="12" height="12" />
+                Ver Repositorio
+              </button>
+              <button
+                disabled
+                class="inline-flex items-center gap-1.5 text-[var(--text-dim)] mono text-[10px] tracking-widest uppercase cursor-not-allowed opacity-50"
+                title="Próximamente"
+              >
+                <Icon name="lucide:external-link" width="12" height="12" />
+                Demo
+              </button>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

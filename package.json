@@ -1,0 +1,20 @@
+{
+  "name": "miguel-petit-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Portfolio personal de Miguel David Petit Dávila — Ingeniero Full Stack",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "@iconify-json/lucide": "^1.2.111",
+    "astro": "^4.11.0",
+    "astro-icon": "^1.1.5",
+    "tailwindcss": "^3.4.4"
+  }
+}

@@ -1,0 +1,100 @@
+---
+import { Icon } from "astro-icon/components";
+
+const stats = [
+  { value: "PERN",  label: "Stack Principal" },
+  { value: "UNEFA", label: "Universidad" },
+  { value: "IA",    label: "Integración Avanzada" },
+  { value: "FST",   label: "Full Stack Dev" },
+];
+---
+
+<section id="about" class="py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-16">
+      <span class="mono text-[var(--accent)] text-sm tracking-widest">01.</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Sobre Mí</h2>
+      <span class="flex-1 h-px bg-[var(--border)] max-w-xs hidden md:block"></span>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+      <!-- Text content -->
+      <div class="space-y-5 text-[var(--text-muted)] leading-relaxed text-base md:text-lg">
+        <p>
+          Soy <span class="text-[var(--text)] font-semibold">Ingeniero de Sistemas</span> graduado
+          de la Universidad Nacional Experimental Politécnica de las Fuerzas Armadas
+          (<span class="text-[var(--accent)] font-semibold mono">UNEFA</span>), con una sólida
+          especialización en el desarrollo Full Stack.
+        </p>
+        <p>
+          Mi enfoque está en la construcción de aplicaciones web
+          <span class="text-[var(--text)] font-semibold">escalables, eficientes y de alto rendimiento</span>,
+          con dominio experto del stack
+          <span class="text-[var(--accent)] font-semibold mono">PERN</span>
+          (PostgreSQL, Express, React, Node).
+        </p>
+        <p>
+          Implemento soluciones de
+          <span class="text-[var(--text)] font-semibold">manejo de caché, automatización de procesos,
+          tareas en segundo plano</span> y sistemas de seguridad robustos. Complemento mi perfil
+          técnico con cursos de programación avanzada e integración de inteligencia artificial
+          en flujos de desarrollo reales.
+        </p>
+        <p>
+          Actualmente desarrollo mis habilidades en inglés para proyectos de alcance internacional
+          y colaboraciones open-source.
+        </p>
+
+        <!-- Download CV button (coloca tu CV en /public/cv-miguel-petit.pdf) -->
+        <div class="pt-2">
+          <a
+            href="/cv-miguel-petit.pdf"
+            download
+            class="group inline-flex items-center gap-2 border border-[var(--accent)] text-[var(--accent)] mono text-xs px-5 py-2.5 rounded tracking-widest uppercase hover:bg-[var(--accent)] hover:text-[var(--bg)] transition-all duration-300"
+          >
+            <Icon name="lucide:arrow-down-to-line" width="14" height="14" />
+            Descargar CV
+          </a>
+        </div>
+      </div>
+
+      <!-- Stats / Info cards -->
+      <div class="space-y-6">
+        <!-- Stat grid -->
+        <div class="grid grid-cols-2 gap-4">
+          {stats.map((stat) => (
+            <div
+              class="border border-[var(--border)] bg-[var(--surface)] rounded-lg p-5 group hover:border-[var(--accent)] hover:bg-[var(--accent-dim)] transition-all duration-300 cursor-default"
+            >
+              <p class="mono text-[var(--accent)] text-xl font-bold mb-1">{stat.value}</p>
+              <p class="text-[var(--text-muted)] text-xs tracking-wide">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Info list -->
+        <div class="border border-[var(--border)] bg-[var(--surface)] rounded-lg p-6 space-y-4">
+          {[
+            { icon: "lucide:map-pin", label: "Ubicación", value: "Punto Fijo, Venezuela" },
+            { icon: "lucide:mail",    label: "Email",     value: "miguel09112004@gmail.com" },
+            { icon: "lucide:phone",   label: "Teléfono",  value: "0412-5804669" },
+            { icon: "lucide:github",  label: "GitHub",    value: "MiguelP04" },
+          ].map((item) => (
+            <div class="flex items-start gap-3">
+              <Icon name={item.icon} class="w-4 h-4 mt-0.5 text-[var(--accent)] shrink-0" />
+              <div>
+                <span class="mono text-[var(--text-dim)] text-[10px] tracking-widest uppercase block mb-0.5">
+                  {item.label}
+                </span>
+                <span class="text-[var(--text)] text-sm font-medium">{item.value}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
